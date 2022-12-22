@@ -6,10 +6,11 @@ import { Inter } from "@next/font/google";
 import Welcome from "../components/Welcome";
 import Button from "../components/Button";
 import Card from "../components/Card";
+import Error from "../components/error";
 
 export default function Home() {
   const [welcome, setWelcome] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
   const [name, setName] = useState("");
@@ -20,6 +21,7 @@ export default function Home() {
   const handleClick = async () => {
     welcome && setWelcome(false);
     setIsLoading(true);
+    setError(false);
 
     try {
       const response = await fetch(
@@ -39,6 +41,7 @@ export default function Home() {
       setIsLoading(false);
       setError(false);
     } catch (err) {
+      setIsLoading(false);
       setError(true);
     }
   };
@@ -47,10 +50,12 @@ export default function Home() {
       {welcome ? (
         <Welcome />
       ) : (
-        // <Card name={name} location={location} bio={bio} base64Img={base64Img} isLoading />
-        <Card {...{ name, location, bio, base64Img, isLoading }} />
+        (error && <Error />) || (
+          <Card {...{ name, location, bio, base64Img, isLoading }} />
+        )
       )}
-      <Button handleClick={handleClick} />
+
+      <Button handleClick={handleClick} isLoading={isLoading} />
     </>
   );
 }

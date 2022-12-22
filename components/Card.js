@@ -38,7 +38,7 @@ const Card = ({ name, location, bio, base64Img, isLoading }) => {
             </div>
           </div>
           <div className="flex-row">
-            <div className="py-3 pl-2 flex gap-4 rounded-md bg-gray-100">
+            <div className="py-3 px-2 flex gap-4 rounded-md bg-gray-100">
               <MapPinIcon
                 className="flex-shrink-0 h-6 w-6 text-orange-600"
                 aria-hidden="true"
@@ -53,7 +53,7 @@ const Card = ({ name, location, bio, base64Img, isLoading }) => {
             </div>
           </div>
           <div className="flex-row">
-            <div className="flex gap-4 py-3 pl-2 rounded-md bg-gray-100">
+            <div className="flex gap-4 py-3 px-2 rounded-md bg-gray-100">
               <InformationCircleIcon
                 className="flex-shrink-0 h-6 w-6 text-orange-600"
                 aria-hidden="true"

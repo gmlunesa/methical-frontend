@@ -1,10 +1,11 @@
 import React from "react";
 
-const Button = ({ handleClick }) => {
+const Button = ({ handleClick, isLoading }) => {
   return (
     <button
       onClick={handleClick}
-      className="rounded-lg text-center text-gray-700 py-2 px-4 bg-gradient-to-br from-orange-200 via-red-200  to-purple-300 p-0.5 shadow-xl transition duration-500 hover:bg-gradient-to-tr hover:shadow-sm"
+      disabled={isLoading}
+      className="rounded-lg text-center text-gray-700 py-2 px-4 bg-gray-200 border border-2 border-purple-500 p-0.5 shadow transition duration-200 hover:border-orange-400"
     >
       Generate profile
     </button>
