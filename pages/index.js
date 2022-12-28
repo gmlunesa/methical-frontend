@@ -6,7 +6,7 @@ import { Inter } from "@next/font/google";
 import Welcome from "../components/Welcome";
 import Button from "../components/Button";
 import Card from "../components/Card";
-import Error from "../components/error";
+import AppError from "../components/AppError";
 
 export default function Home() {
   const [welcome, setWelcome] = useState(true);
@@ -52,7 +52,7 @@ export default function Home() {
       {welcome ? (
         <Welcome />
       ) : (
-        (error && <Error />) || (
+        (error && <AppError />) || (
           <Card {...{ name, location, bio, base64Img, isLoading }} />
         )
       )}
