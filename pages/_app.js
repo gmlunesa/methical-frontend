@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>methical</title>
+        <title>methical by Goldy Mariz Lunesa @gmlunesa</title>
       </Head>
       <style jsx global>
         {`

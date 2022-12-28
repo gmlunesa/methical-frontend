@@ -29,10 +29,12 @@ export default function Home() {
         {}
       );
 
-      setIsLoading(false);
       if (!response.ok) throw "Request unsuccessful.";
 
       const json = await response.json();
+
+      setIsLoading(false);
+
       setName(json.name);
       setLocation(json.location);
       setBio(json.bio);
